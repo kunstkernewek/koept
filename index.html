@@ -1,0 +1,105 @@
+
+<!DOCTYPE html><html class=''>
+<head><meta charset='UTF-8'>
+<style class="cp-pen-styles">* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  color: #ff0;
+  background-color: #000;
+}
+/* ---- isotope ---- */
+.isotope {
+  max-width: 1200px;
+  padding: 10px;
+}
+
+/* clear fix */
+.isotope:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.one {
+width: 150px;
+height: 150px;
+padding: 10px;
+border: 1px dashed #FFff00;
+}
+/* ---- .item ---- */
+
+.item {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #000;
+  border: 1px solid #FFff00;
+  border-color: #FFff00;
+  padding: 0;
+}
+
+.item.width2 { width: 200px; }
+.item.height2 { height: 200px; }
+.item.width15 { width: 150px; }
+.item.height15 { height: 150px; }
+.item.width3 { width: 300px; }
+.item.height3 { height: 300px; }
+
+.info {
+list-style: none;
+padding: 2px 4px;
+margin: 0;
+}
+.date {
+position: absolute;
+bottom: 3px;
+right: 4px;
+font-size: xx-small;
+}
+</style></head><body>
+
+<div class="isotope" id="isotopish">
+  <div class="one">Loading koept list of works...</div>
+</div>
+
+<script src='http:////ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+<script src='http://isotope.metafizzy.co/isotope.pkgd.js'></script>
+<script type="text/javascript" src="tabletop.js"></script>
+<script type="text/javascript">
+
+  $(document).ready( function() {
+
+  // init isotope
+  var $container = $('#isotopish').isotope({
+    itemSelector: '.item',
+    masonry: {
+      columnWidth: 50
+    }
+  });
+
+      var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0AkGk3GyWwWwccDM5dk9ReHdqa2VuYUhPbFZaQ1JMSkE&single=true&gid=6&output=html';
+
+      $( function() {
+        Tabletop.init( { key: public_spreadsheet_url,
+                         callback: showInfo,
+                         wanted: [ "inept" ],
+                         debug: true } )
+      })
+
+      function showInfo(data, tabletop) {
+
+        $.each( tabletop.sheets("inept").all(), function(i, cat) {
+          var cat_li = $('<div id="' + cat.release + '" class="item ' + cat.display + '"><ul class="info"><li class="title">' + cat.title + '</li><li class="artist">' + cat.artist + '</li><li class="date">' + cat.date+ '</li></ul></div>')
+          //cat_li.append(cat.label);
+          cat_li.appendTo("#isotopish");
+           $container.append( cat_li )
+    // add and lay out newly appended elements
+            .isotope( 'appended', cat_li );
+        })
+      }// http://isotope.metafizzy.co/isotope.pkgd.js
+});
+</script>
+</body></html>
