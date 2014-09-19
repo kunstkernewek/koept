@@ -77,6 +77,9 @@ font-size: xx-small;
     itemSelector: '.item',
     masonry: {
       columnWidth: 50
+    },
+    getSortData: {
+      artist: '.artist'
     }
   });
 
@@ -98,6 +101,7 @@ font-size: xx-small;
            $container.append( cat_li )
     // add and lay out newly appended elements
             .isotope( 'appended', cat_li );
+            $container.isotope({ sortBy: 'artist' });
         })
       }// http://isotope.metafizzy.co/isotope.pkgd.js
 });
