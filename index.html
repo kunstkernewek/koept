@@ -49,8 +49,16 @@ border-top: 1px solid #FFff00 ;
   border-color: #FFff00;
   padding: 0;
 }
-.item.rot7 {-webkit-transform: rotate(7deg);}
-.item.rot3 {-webkit-transform: rotate(3deg);}
+.item.rot7 {
+  -ms-transform: rotate(7deg); /* IE 9 */
+  -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+  transform: rotate(7deg);
+}
+.item.rot3 {
+  -ms-transform: rotate(3deg); /* IE 9 */
+  -webkit-transform: rotate(3deg); /* Chrome, Safari, Opera */
+  transform: rotate(3deg);
+}
 .item.width2 { width: 200px; }
 .item.height2 { height: 200px; }
 .item.width15 { width: 150px; }
