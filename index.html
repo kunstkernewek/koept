@@ -1,15 +1,17 @@
 <!DOCTYPE html><html class=''>
 <head><meta charset='UTF-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <style class="cp-pen-styles">* {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
-body {
+body, a {
   font-family: sans-serif;
   color: #ff0;
   background-color: #000;
   margin: 0px;
+  text-decoration: none;
 }
 /* ---- isotope ---- */
 .isotope {
@@ -98,7 +100,7 @@ font-size: xx-small;
       function showInfo(data, tabletop) {
 
         $.each( tabletop.sheets("inept").all(), function(i, cat) {
-          var cat_li = $('<div id="' + cat.release + '" class="item ' + cat.display + '"><ul class="info"><li class="title">' + cat.title + '</li><li class="artist">' + cat.artist + '</li><li class="date">' + cat.date+ '</li></ul></div>')
+          var cat_li = $('<div id="' + cat.release + '" class="item ' + cat.display + '"><ul class="info"><li class="title"><a href="http://' + cat.url + '">' + cat.title + '</a></li><li class="artist">' + cat.artist + '</li><li class="date">' + cat.date+ '</li></ul></div>')
           //cat_li.append(cat.label);
           cat_li.appendTo("#isotopish");
            $container.append( cat_li )
