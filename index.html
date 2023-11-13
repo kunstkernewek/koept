@@ -98,18 +98,18 @@ font-size: xx-small;
   '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-MSGKDP');</script>
   <!-- End Google Tag Manager -->
-  <img id="klogo" src="http://koept.net/ktop.png">
+  <img id="klogo" src="https://koept.net/ktop.png">
   <div id="bgmove">
 <marquee behavior="scroll" direction="left" scrollamount="1" style="position: absolute; left:-20px; top:165px; width:100%;">
-<img src="http://koept.net/control/sites/all/themes/k1/images/cloud.png">
+<img src="https://koept.net/control/sites/all/themes/k1/images/cloud.png">
 </marquee>
 </div>
   <div class="isotope" id="isotopish">
     <div class="one">Loading koept list of works...</div>
   </div>
 
-<script src='http:////ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
-<script src='http://isotope.metafizzy.co/isotope.pkgd.js'></script>
+<script src='https:////ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+<script src='https://isotope.metafizzy.co/isotope.pkgd.js'></script>
 <!-- <script type="text/javascript" src="tabletop.js"></script> -->
 <script type="text/javascript" src="papaparse.min.js"></script> 
 <script type="text/javascript">
@@ -147,14 +147,14 @@ window.addEventListener('DOMContentLoaded', init))
       function showInfo(data, tabletop) {
 
         $.each( tabletop.sheets("inept").all(), function(i, cat) {
-          var cat_li = $('<div id="' + cat.release + '" class="item ' + cat.display + '"><ul class="info"><li class="title"><a href="http://' + cat.url + '">' + cat.title + '</a></li><li class="artist">' + cat.artist + '</li><li class="date">' + cat.date+ '</li></ul></div>')
+          var cat_li = $('<div id="' + cat.release + '" class="item ' + cat.display + '"><ul class="info"><li class="title"><a href="https://' + cat.url + '">' + cat.title + '</a></li><li class="artist">' + cat.artist + '</li><li class="date">' + cat.date+ '</li></ul></div>')
           //cat_li.append(cat.label);
           cat_li.appendTo("#isotopish");
            $container.append( cat_li )
     // add and lay out newly appended elements
             .isotope( 'appended', cat_li );
         })
-      }// http://isotope.metafizzy.co/isotope.pkgd.js
+      }// https://isotope.metafizzy.co/isotope.pkgd.js
 });
 
 </script>
